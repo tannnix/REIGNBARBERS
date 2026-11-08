@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="REIGN Barber Co. — precision cuts, modern styles, and a fresh barbershop experience.">
+  <title>REIGN Barber Co. | Own Your Look</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header" id="top">
+    <a class="brand" href="#top" aria-label="Reign Barber Co. home">
+      <span class="brand-mark">
+        R<span>✦</span>
+      </span>
+      <span class="brand-name">
+        REIGN
+        <small>BARBER CO.</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="mainNav">
+      <a href="#services">Services</a>
+      <a href="#styles">Haircuts</a>
+      <a href="#about">Our story</a>
+      <a href="#visit">Find us</a>
+      <button class="button button-small" type="button" data-book>
+        BOOK A CUT <span>↗</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-photo"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span>
+          THE REIGN STANDARD · EST. 2024
+        </p>
+        <h1>
+          LOOK SHARP.<br>
+          <em>FEEL</em> UNSTOPPABLE.
+        </h1>
+        <p class="hero-text">
+          More than a haircut. It's your signature.<br>
+          Come in as you are. Leave with a fresh perspective.
+        </p>
+        <div class="hero-actions">
+          <button class="button" type="button" data-book>
+            BOOK YOUR APPOINTMENT <span>↗</span>
+          </button>
+          <a class="text-link" href="#styles">
+            EXPLORE HAIRCUTS <span>↓</span>
+          </a>
+        </div>
+        <div class="hero-note">
+          <span class="status-dot"></span>
+          <span id="shopStatus">CHECKING SHOP HOURS...</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">01 / THE MENU</p>
+          <h2>
+            THE RIGHT CUT.<br>
+            <em>THE RIGHT FEEL.</em>
+          </h2>
+        </div>
+        <p class="section-intro">From clean everyday cuts to a full reset, we've got your look covered. Quality work, no shortcuts.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <div class="service-number">01</div>
+          <div class="service-icon">✂</div>
+          <h3>THE CLASSIC</h3>
+          <p>A clean, timeless haircut made to fit your everyday style.</p>
+          <div class="service-bottom">
+            <strong>₱250 <small>STARTING AT</small></strong>
+            <button type="button" data-service="Classic Haircut" data-book>BOOK ↗</button>
+          </div>
+        </article>
+        <article class="service-card featured reveal">
+          <div class="service-number">02</div>
+          <div class="service-icon">✦</div>
+          <h3>FADE / TAPER</h3>
+          <p>Sharp blends, smooth transitions, and a crisp finish.</p>
+          <div class="service-bottom">
+            <strong>₱300 <small>STARTING AT</small></strong>
+            <button type="button" data-service="Fade / Taper" data-book>BOOK ↗</button>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-number">03</div>
+          <div class="service-icon">♛</div>
+          <h3>HAIR + BEARD</h3>
+          <p>A complete grooming session, finished with attention to detail.</p>
+          <div class="service-bottom">
+            <strong>₱400 <small>STARTING AT</small></strong>
+            <button type="button" data-service="Haircut + Beard" data-book>BOOK ↗</button>
+          </div>
+        </article>
+      </div>
+      <p class="service-hint" id="serviceHint" aria-live="polite">Hover over a service to see its details.</p>
+    </section>
+
+    <section class="styles-section" id="styles">
+      <div class="section section-inner">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">02 / FIND YOUR LOOK</p>
+            <h2>
+              YOUR HAIR.<br>
+              <em>YOUR RULES.</em>
+            </h2>
+          </div>
+          <p class="section-intro">Need a little inspiration? Browse our haircut board. Pick a style and bring it to your next appointment.</p>
+        </div>
+
+        <div class="style-tools reveal">
+          <div class="filters" role="group" aria-label="Filter haircut styles">
+            <button class="filter active" type="button" data-filter="all">
+              ALL STYLES <span>24</span>
+            </button>
+            <button class="filter" type="button" data-filter="fade">FADES</button>
+            <button class="filter" type="button" data-filter="classic">CLASSIC</button>
+            <button class="filter" type="button" data-filter="texture">TEXTURED</button>
+            <button class="filter" type="button" data-filter="long">LONGER</button>
+          </div>
+          <div class="search-box">
+            <label for="styleSearch">⌕</label>
+            <input
+              type="search"
+              id="styleSearch"
+              name="styleSearch"
+              placeholder="Find a haircut..."
+              aria-label="Search haircuts"
+            >
+          </div>
+        </div>
+        <div class="style-grid" id="styleGrid" aria-live="polite"></div>
+        <button
+          class="button button-small style-toggle"
+          id="styleToggle"
+          type="button"
+          aria-controls="styleGrid"
+          aria-expanded="false"
+          hidden
+        >
+          SEE ALL HAIRCUTS
+        </button>
+        <p class="style-footnote">
+          <span>✦</span>
+          Not sure what suits you? Show your barber a reference and we'll help you find the right fit.
+        </p>
+      </div>
+    </section>
+
+    <section class="statement-section" id="about">
+      <div class="statement-image reveal"></div>
+      <div class="statement-copy reveal">
+        <p class="eyebrow">03 / MORE THAN A BARBERSHOP</p>
+        <h2>
+          GOOD CUTS.<br>
+          <em>BETTER</em> CONFIDENCE.
+        </h2>
+        <p>At REIGN, every detail matters. The consultation, the blend, the finish. Our goal is simple: give you a cut that feels like you — only fresher.</p>
+        <a class="text-link" href="#visit">
+          COME THROUGH <span>↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section visit-section" id="visit">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">04 / MAKE IT HAPPEN</p>
+          <h2>
+            YOUR CHAIR<br>
+            <em>IS WAITING.</em>
+          </h2>
+        </div>
+        <p class="section-intro">Ready for a refresh? Send an appointment request and we'll get back to you to confirm your slot.</p>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-card reveal">
+          <p class="eyebrow">COME VISIT</p>
+          <h3>REIGN BARBER CO.</h3>
+          <img
+            class="visit-photo"
+            src="images/barber-s-sharp-scissors-stockcake.jpg"
+            alt="A pair of professional barber scissors"
+            loading="lazy"
+          >
+          <p>Mataas Na Kahoy General Mamerto Natividad, Nueva Ecija Philippines</p>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Mataas+Na+Kahoy+General+Mamerto+Natividad%2C+Nueva+Ecija%2C+Philippines" target="_blank" rel="noopener">GET DIRECTIONS ↗</a>
+        </div>
+        <div class="hours-card reveal">
+          <p class="eyebrow">SHOP HOURS</p>
+          <div class="table-responsive">
+            <table class="hours-table">
+              <caption class="sr-only">REIGN Barber Co. weekly opening hours</caption>
+              <thead>
+                <tr>
+                  <th scope="col">DAY</th>
+                  <th scope="col">OPENING HOURS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-day="1">
+                  <th scope="row">Monday</th>
+                  <td>Closed</td>
+                </tr>
+                <tr data-day="2">
+                  <th scope="row">Tuesday</th>
+                  <td>10:00 AM – 8:00 PM</td>
+                </tr>
+                <tr data-day="3">
+                  <th scope="row">Wednesday</th>
+                  <td>10:00 AM – 8:00 PM</td>
+                </tr>
+                <tr data-day="4">
+                  <th scope="row">Thursday</th>
+                  <td>10:00 AM – 8:00 PM</td>
+                </tr>
+                <tr data-day="5">
+                  <th scope="row">Friday</th>
+                  <td>10:00 AM – 8:00 PM</td>
+                </tr>
+                <tr data-day="6">
+                  <th scope="row">Saturday</th>
+                  <td>10:00 AM – 8:00 PM</td>
+                </tr>
+                <tr data-day="0">
+                  <th scope="row">Sunday</th>
+                  <td>10:00 AM – 8:00 PM</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="2">Last updated: check with the shop before visiting.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Reign Barber Co. home">
+          <span class="brand-mark">
+            R<span>✦</span>
+          </span>
+          <span class="brand-name">
+            REIGN
+            <small>BARBER CO.</small>
+          </span>
+        </a>
+        <p class="footer-tagline">Look sharp. Feel unstoppable.</p>
+        <p class="footer-lead">Sign up to our newsletter and be the first to know about promos and news!</p>
+        <form class="newsletter" id="newsletterForm" novalidate>
+          <label class="sr-only" for="newsletterEmail">Email address</label>
+          <input type="email" id="newsletterEmail" name="newsletterEmail" placeholder="Your email address"
+                 autocomplete="email" required aria-describedby="newsletterMsg">
+          <button class="button" type="submit">SUBMIT</button>
+          <p class="newsletter-msg" id="newsletterMsg" aria-live="polite"></p>
+        </form>
+        <p class="footer-fineprint">By subscribing, you agree to receive promos and news by email. Demo only: nothing is sent to a server.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Quick links">
+        <h2>QUICK LINKS</h2>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#styles">Haircuts</a></li>
+          <li><a href="#about">Our story</a></li>
+          <li><a href="#visit">Find us</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h2>WHAT WE DO</h2>
+        <ul>
+          <li><a href="#services">The Classic</a></li>
+          <li><a href="#services">Fade / Taper</a></li>
+          <li><a href="#services">Hair + Beard</a></li>
+          <li><button class="footer-link" type="button" data-book>Book Appointment</button></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h2>CONTACT US</h2>
+        <address>
+          REIGN Barber Co.<br>
+          Open Tuesday to Sunday<br>
+          10 AM to 8 PM
+        </address>
+        <address>
+          Mataas Na Kahoy General Mamerto Natividad, Nueva Ecija Philippines
+        </address>
+        <a class="get-in-touch" href="https://www.google.com/maps/search/?api=1&query=Mataas+Na+Kahoy+General+Mamerto+Natividad%2C+Nueva+Ecija%2C+Philippines" target="_blank" rel="noopener">Get directions <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>PRECISION · CHARACTER · CRAFT</p>
+      <span>
+        © <span id="year"></span> REIGN BARBER CO. ALL RIGHTS RESERVED.
+      </span>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top">↑</button>
+
+  <div class="modal" id="bookingModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <section class="booking-panel" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+      <button class="modal-close" type="button" data-close aria-label="Close booking form">×</button>
+      <p class="eyebrow">LET'S GET YOU FRESH</p>
+      <h2 id="bookingTitle">
+        BOOK YOUR<br>
+        <em>NEXT CUT.</em>
+      </h2>
+      <p class="modal-intro">Fill in your details. This demo form checks your information and prepares an appointment request.</p>
+      <form id="bookingForm" action="#" method="post" novalidate>
+        <fieldset class="form-group">
+          <legend>YOUR CONTACT DETAILS</legend>
+          <div class="form-row">
+            <label for="customerName">YOUR NAME
+              <input type="text" id="customerName" name="customerName" placeholder="Full name"
+                     minlength="2" maxlength="60" autocomplete="name" required aria-describedby="customerNameMsg">
+              <span class="field-msg" id="customerNameMsg" aria-live="polite"></span>
+            </label>
+            <label for="customerPhone">PHONE NUMBER
+              <input type="tel" id="customerPhone" name="customerPhone" placeholder="09XXXXXXXXX"
+                     pattern="(09[0-9]{9}|\+639[0-9]{9})" title="Enter 09XXXXXXXXX or +639XXXXXXXXX"
+                     autocomplete="tel" maxlength="13" required aria-describedby="customerPhoneMsg">
+              <span class="field-msg" id="customerPhoneMsg" aria-live="polite"></span>
+            </label>
+          </div>
+            <label for="customerEmail">EMAIL ADDRESS
+              <input type="email" id="customerEmail" name="customerEmail" placeholder="you@example.com"
+                   autocomplete="email" required aria-describedby="customerEmailMsg">
+              <span class="field-msg" id="customerEmailMsg" aria-live="polite"></span>
+            </label>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>APPOINTMENT DETAILS</legend>
+          <div class="form-row">
+            <label for="serviceSelect">SERVICE
+              <select id="serviceSelect" name="service" required aria-describedby="serviceSelectMsg">
+                <option value="">Choose a service</option>
+                <option value="Classic Haircut" data-price="250">Classic Haircut — ₱250</option>
+                <option value="Fade / Taper" data-price="300">Fade / Taper — ₱300</option>
+                <option value="Haircut + Beard" data-price="400">Haircut + Beard — ₱400</option>
+                <option value="Beard Trim" data-price="150">Beard Trim — ₱150</option>
+              </select>
+              <span class="field-msg" id="serviceSelectMsg" aria-live="polite"></span>
+            </label>
+            <label for="chosenStyle">HAIRCUT STYLE
+              <select id="chosenStyle" name="style">
+                <option value="">Not sure yet</option>
+              </select>
+            </label>
+          </div>
+          <div class="chip-row" id="styleChips" aria-live="polite"></div>
+          <div class="form-row">
+            <label for="bookingDate">DATE
+              <input type="date" id="bookingDate" name="date" required aria-describedby="bookingDateMsg">
+              <span class="field-msg" id="bookingDateMsg" aria-live="polite"></span>
+            </label>
+            <label for="bookingTime">TIME
+              <select id="bookingTime" name="time" required aria-describedby="bookingTimeMsg">
+                <option value="">Choose a time</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>12:00 PM</option>
+                <option>1:00 PM</option>
+                <option>2:00 PM</option>
+                <option>3:00 PM</option>
+                <option>4:00 PM</option>
+                <option>5:00 PM</option>
+                <option>6:00 PM</option>
+                <option>7:00 PM</option>
+              </select>
+              <span class="field-msg" id="bookingTimeMsg" aria-live="polite"></span>
+            </label>
+          </div>
+          <div class="form-row">
+            <label for="partySize">NUMBER OF PEOPLE
+              <input type="number" id="partySize" name="partySize" min="1" max="5" value="1" required aria-describedby="partySizeMsg">
+              <span class="field-msg" id="partySizeMsg" aria-live="polite"></span>
+            </label>
+            <div class="addon-box">
+              <span class="mini-label">ADD-ON</span>
+              <label class="choice" for="hotTowel">
+                <input type="checkbox" id="hotTowel" name="hotTowel" data-price="50">
+                Hot towel finish (+₱50)
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>HOW SHOULD WE CONFIRM?</legend>
+          <div class="choice-row">
+            <label class="choice" for="contactSms"><input type="radio" id="contactSms" name="contactMethod" value="SMS" required> Text message (SMS)</label>
+            <label class="choice" for="contactEmail"><input type="radio" id="contactEmail" name="contactMethod" value="Email" required> Email</label>
+            <label class="choice" for="contactCall"><input type="radio" id="contactCall" name="contactMethod" value="Phone call" required> Phone call</label>
+          </div>
+          <span class="field-msg" id="contactMethodMsg" aria-live="polite"></span>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>ADDITIONAL NOTES</legend>
+          <label for="bookingNote">ANYTHING WE SHOULD KNOW?
+            <textarea id="bookingNote" name="note" rows="4" maxlength="300"
+                      placeholder="Tell us how you'd like your cut..."></textarea>
+          </label>
+        </fieldset>
+
+        <div class="promo-row">
+          <button class="promo-btn" type="button" id="promoBtn">HAVE A PROMO CODE?</button>
+          <span class="promo-msg" id="promoMsg" aria-live="polite"></span>
+        </div>
+        <div class="estimate">
+          <span>ESTIMATED TOTAL</span>
+          <strong id="priceEstimate">₱0</strong>
+        </div>
+        <label class="choice consent" for="consent">
+          <input type="checkbox" id="consent" name="consent" required aria-describedby="consentMsg">
+          I understand this is a request and the shop must confirm my appointment.
+        </label>
+        <span class="field-msg" id="consentMsg" aria-live="polite"></span>
+        <button class="button button-submit" type="submit">
+          SEND APPOINTMENT REQUEST <span>↗</span>
+        </button>
+        <small class="form-disclaimer">Demo only — no reservation is sent to a server. The shop must confirm your appointment.</small>
+      </form>
+      <div class="success-state" id="successState" hidden>
+        <div class="success-icon">✓</div>
+        <h3>REQUEST READY.</h3>
+        <p id="successText"></p>
+        <ul class="summary-list" id="summaryList" aria-label="Appointment request summary"></ul>
+        <div class="success-actions">
+          <button class="button" type="button" id="doneBtn">DONE</button>
+          <button class="button button-outline" type="button" id="printBtn">PRINT SUMMARY</button>
+          <button class="button button-outline" type="button" id="directionsBtn">GET DIRECTIONS <span>↗</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
